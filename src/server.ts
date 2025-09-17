@@ -22,10 +22,11 @@ app.use(cors({
 app.use(express.json());
 
 
-app.get('/ping', (req, res) => {
-  res.json({ message: 'pong', timestamp: new Date().toISOString() });
+app.get('/ping', (_req, res) => {
+  res.status(200)
+    .type('text/plain')      // force Content-Type: text/plain
+    .send('pong');           // exactement "pong", sans JSON
 });
-
 app.use(errorHandler);
 
 process.on('uncaughtException', (error) => {
