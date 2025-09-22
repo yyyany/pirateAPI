@@ -5,6 +5,7 @@ import swaggerUi from 'swagger-ui-express';
 import yaml from 'yamljs';
 import dotenv from 'dotenv';
 import path from 'path';
+import { createShipRoutes } from './routes/ship.routes';
 
 import { errorHandler } from './middleware/error.middleware';
 
@@ -24,9 +25,11 @@ app.use(express.json());
 
 app.get('/ping', (_req, res) => {
   res.status(200)
-    .type('text/plain')      // force Content-Type: text/plain
-    .send('pong');           // exactement "pong", sans JSON
+    .type('text/plain')      
+    .send('pong');           
 });
+
+app.use('/api', createShipRoutes());
 app.use(errorHandler);
 
 process.on('uncaughtException', (error) => {

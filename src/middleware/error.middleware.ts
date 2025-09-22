@@ -22,3 +22,21 @@ export const errorHandler = (
     ...(process.env.NODE_ENV === 'development' && { stack: error.stack })
   });
 };
+
+
+///////////////////////////////// 
+// CHANGER LE SYSTEME PAR USER 
+export interface AuthenticatedRequest extends Request {
+  userId?: string;
+}
+
+export function mockAuthMiddleware(
+  req: AuthenticatedRequest,
+  _res: Response,
+  next: NextFunction
+) {
+  
+  req.userId = "system"; // plus tard : extraire depuis JWT
+  next();
+}
+

@@ -1,5 +1,5 @@
 {
-  "name": "todo-api",
+  "name": "pirate-api",
   "version": "1.0.0",
   "description": "A TypeScript Node.js API with Express, MariaDB, and Prisma ORM following controller-service-repository architecture",
   "main": "dist/server.js",
