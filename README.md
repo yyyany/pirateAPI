@@ -1,4 +1,4 @@
-# deploye
+# deploye sur un VPS
 ```
 # Supprimer l'ancien processus si il existe
 pm2 delete pirateapi 2>/dev/null

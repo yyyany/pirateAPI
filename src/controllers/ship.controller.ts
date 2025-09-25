@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import { ShipService } from '../services/ship.service';
 import { CreateShipRequest, UpdateShipRequest } from '../types/ship.types';
 
+// ShipService 
 const shipService = new ShipService();
 
 export class ShipController {
